@@ -13,4 +13,4 @@ artifacts:
   files:
     - '**/*'
   name: react-app
-  discard-paths: yes
+  discard-paths: ye
