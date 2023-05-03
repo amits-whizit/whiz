@@ -4,11 +4,19 @@ files:
   - source: / 
     destination: /
 hooks:
-AfterInstall:
-  - location: genesis1/install_nginx.sh
+BeforeInstall:
+  - location: whiz/install_dependencies.sh
     timeout: 300
     runas: root
+AfterInstall:
+  - location: whiz/install_nginx.sh
+    timeout: 300
+    runas: root
+ApplicationStop:
+  - location: whiz/stop_nginx.sh
+    timeout: 300
+    runas: root    
 ApplicationStart:
-  - location: genesis1/start_nginx.sh
+  - location: whiz/start_nginx.sh
     timeout: 300
     runas: root
